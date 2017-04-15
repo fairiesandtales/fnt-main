@@ -17,51 +17,23 @@
       <nav>
         <ul class="nav nav-pills float-right">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <%= active_link_to 'Home', root_path, class: 'nav-link', active: :exact %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <%= active_link_to 'About', about_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <%= active_link_to 'WIKI', wiki_path, class: 'nav-link' %>
           </li>
         </ul>
       </nav>
-      <h3 class="text-muted">Project name</h3>
+      <h3 class="text-muted">Fairies & Tales</h3>
     </div>
 
     <%= yield %>
 
-    <div class="row marketing">
-      <div class="col-lg-6">
-        <h3>Top Players</h3>
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet
-          fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-      </div>
-
-      <div class="col-lg-6">
-        <h3>New Players</h3>
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet
-          fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-      </div>
-    </div>
-
     <footer class="footer">
-      <p>&copy; Company 2017</p>
+      <p>&copy; Peter Mikola 2017</p>
     </footer>
 
   </div>
