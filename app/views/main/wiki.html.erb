@@ -1,6 +1,9 @@
 <div class="jumbotron">
   <h1 class="display-4">Wiki</h1>
   <p class="">
-    List of things
+    List of users for testing: <br/>
+    <% @users.each do |user| %>
+        <%= user %>
+    <%end %>
   </p>
 </div>
