@@ -25,34 +25,39 @@
           <li class="nav-item">
             <%= active_link_to 'WIKI', wiki_path, class: 'nav-link' %>
           </li>
+          <% if !current_user.present? %>
           <li class="nav-item">
-            <% if !current_user.present? %>
-              <%= active_link_to 'Login', new_user_session_path, class: 'nav-link', active: :exact %>
-            <% else %>
-              <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link', active: :exact %>
-            <% end %>
+            <%= active_link_to 'Login', new_user_session_path, class: 'nav-link user-func', active: :exact %>
           </li>
+          <% else %>
+          <li class="nav-item">
+            <%= active_link_to 'Settings', edit_user_registration_path, class: 'nav-link user-func', active: :exact %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link user-func', active: :exact %>
+          </li>
+          <% end %>
         </ul>
       </nav>
       <h3 class="text-muted">Fairies & Tales</h3>
     </div>
 
-    <% if notice -%>
+    <% if notice %>
         <div class="alert alert-info alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
           <strong>Notice!</strong> <%= notice %>
         </div>
-    <% end -%>
-    <% if alert -%>
+    <% end %>
+    <% if alert %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
           <strong>Alert!</strong> <%= alert %>
         </div>
-    <% end -%>
+    <% end %>
 
     <%= yield %>
 

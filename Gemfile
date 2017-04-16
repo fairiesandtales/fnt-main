@@ -8,6 +8,7 @@ end
 # Backend
 gem 'devise', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
+gem 'omniauth'
 gem 'rails', '~> 5.0.2'
 gem 'turbolinks', '~> 5'
 

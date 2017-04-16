@@ -42,7 +42,7 @@ a {
 /* Customize container */
 @media (min-width: 48em) {
   .container {
-    max-width: 46rem;
+    max-width: 64rem;
   }
 }
 .container-narrow > hr {
@@ -87,4 +87,8 @@ a {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.user-func {
+  color: #fdb;
 }
