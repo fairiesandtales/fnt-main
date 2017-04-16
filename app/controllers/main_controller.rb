@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-  before_action :authenticate_user!, only: :wiki
+  # before_action :authenticate_user!, only: :wiki
 
   def index
     @chars_by_xp = []

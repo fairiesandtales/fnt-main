@@ -8,7 +8,8 @@ Rails.application.routes.draw do
                confirmation: 'verification',
                sign_up: 'register',
                edit: 'settings'
-             }
+             },
+             controllers: { omniauth_callbacks: 'callbacks' }
 
   root 'main#index'
 
