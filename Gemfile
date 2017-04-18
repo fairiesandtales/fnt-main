@@ -7,6 +7,9 @@ end
 
 ruby '2.4.1'
 
+# Environment
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Backend
 gem 'devise', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
@@ -19,11 +22,12 @@ gem 'turbolinks', '~> 5'
 # Frontend
 gem 'active_link_to'
 gem 'bootstrap'
+gem 'bootstrap-social-rails'
 gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-
 
 group :development, :test do
   gem 'byebug', platform: :mri
