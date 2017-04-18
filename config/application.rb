@@ -6,7 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
+begin
+  Dotenv::Railtie.load
+rescue NameError
+  # There is no dotenv gem loaded
+end
+
 
 module Fnt
   class Application < Rails::Application
