@@ -17,6 +17,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'pg'
 gem 'rails', '~> 5.0.2'
+gem 'sendgrid-ruby'
 gem 'turbolinks', '~> 5'
 
 # Frontend

@@ -64,14 +64,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'fairiesandtales.com' }
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
-      port:                 587,
-      domain:               'fairiesandtales.com',
-      user_name:            ENV['MAIL_USER'],
-      password:             ENV['MAIL_PASSWORD'],
-      authentication:       'plain',
-      enable_starttls_auto: true
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
+    domain:               'fairiesandtales.com',
+    address:              'smtp.sendgrid.net',
+    port:                 587,
+    authentication:       :plain,
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
