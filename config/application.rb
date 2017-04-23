@@ -12,11 +12,13 @@ rescue NameError
   # There is no dotenv gem loaded
 end
 
-
 module Fnt
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.to_prepare do
+      Devise::Mailer.layout 'mailer'
+    end
   end
 end
