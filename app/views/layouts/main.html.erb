@@ -31,7 +31,7 @@
           </li>
           <% else %>
           <li class="nav-item">
-            <%= active_link_to 'Settings', edit_user_registration_path, class: 'nav-link user-func', active: :exact %>
+            <%= active_link_to 'Settings', edit_user_registration_path, class: 'nav-link user-func', active: %r(/users.*) %>
           </li>
           <li class="nav-item">
             <%= link_to 'Logout', destroy_user_session_path, class: 'nav-link user-func', active: :exact %>
@@ -42,23 +42,6 @@
       <h3 class="text-muted">Fairies & Tales</h3>
     </div>
 
-    <% if notice %>
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <strong>Notice!</strong> <%= notice %>
-        </div>
-    <% end %>
-    <% if alert %>
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <strong>Alert!</strong> <%= alert %>
-        </div>
-    <% end %>
-
     <div class="jumbotron">
       <%= yield %>
     </div>
@@ -66,9 +49,22 @@
     <footer class="footer">
       <p>&copy; Fairies & Tales 2017</p>
     </footer>
-
   </div>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <% unless flash.empty? %>
+    <script type="text/javascript">
+      <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+        <% if type == 'form_errors' %>
+          <% f[1].each do |t| %>
+            toastr['<%= t[0].to_s %>']('<%= t[1] %>');
+          <% end %>
+        <% else %>
+          toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+      <% end %>
+    </script>
+  <% end %>
 </body>
 </html>

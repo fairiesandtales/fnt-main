@@ -5,7 +5,7 @@
 # and maximum, this matches the default thread size of Active Record.
 #
 threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }.to_i
-threads threads_count, threads_count
+threads 1, threads_count
 
 port        ENV.fetch('PORT') { 3000 }
 environment ENV.fetch('RAILS_ENV') { 'development' }
@@ -49,7 +49,7 @@ before_fork do
     config.frequency     = 5
     config.percent_usage = 0.9
     config.rolling_restart_frequency = 12 * 3600
-    config.reaper_status_logs = true
+    config.reaper_status_logs = false
   end
   PumaWorkerKiller.start
 end

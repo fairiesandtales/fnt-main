@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap
+//= require toastr
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
