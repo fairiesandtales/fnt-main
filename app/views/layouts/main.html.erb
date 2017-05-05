@@ -8,6 +8,7 @@
   <title>Fairies & Tales</title>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css', media: 'all' %>
 </head>
 
 <body>
@@ -52,6 +53,7 @@
   </div>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js' %>
   <% unless flash.empty? %>
     <script type="text/javascript">
       <% flash.each do |f| %>
