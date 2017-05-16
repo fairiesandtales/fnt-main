@@ -12,15 +12,14 @@ gem 'dotenv-rails', groups: %i[development test]
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Backend
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.3'
 gem 'jbuilder', '~> 2.5'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'puma_worker_killer'
-gem 'rails', '~> 5.0.2'
-gem 'sendgrid-ruby'
+gem 'rails', '~> 5.1'
 gem 'turbolinks', '~> 5'
 
 # Frontend
@@ -32,6 +31,12 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+
+# Utils
+#gem 'ipinvestigator', github: 'mbuckbee/Ip-Investigator-Gem'
+gem 'scout_apm'
+gem 'sendgrid-ruby'
+
 
 group :development do
   gem 'byebug', platform: :mri
