@@ -255,6 +255,12 @@ Devise.setup do |config|
                   ENV.fetch('GOOGLE_OAUTH_ID') { '' },
                   ENV.fetch('GOOGLE_OAUTH_SECRET') { '' },
                   name: 'google'
+  config.omniauth :facebook,
+                  ENV.fetch('FACEBOOK_OAUTH_ID') { '' },
+                  ENV.fetch('FACEBOOK_OAUTH_SECRET') { '' }
+  config.omniauth :twitter,
+                  ENV.fetch('TWITTER_OAUTH_ID') { '' },
+                  ENV.fetch('TWITTER_OAUTH_SECRET') { '' }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
