@@ -12,7 +12,7 @@ gem 'dotenv-rails', groups: %i[development test]
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Backend
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.7'
 gem 'jbuilder', '~> 2.5'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
